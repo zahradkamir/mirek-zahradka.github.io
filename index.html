@@ -16,11 +16,11 @@
   </a>
   <nav class="nav">
     <a href="#uvod">Úvod</a>
-    <a href="#hudba">Hudba</a>
-    <a href="#sport">Sport</a>
-    <a href="#zahrada">Zahrada</a>
-    <a href="#skola">Škola</a>
-    <a href="#vcelareni">Včelaření</a>
+    <a href="#hudba" data-nav-area="hudba">Hudba</a>
+    <a href="#sport" data-nav-area="sport">Sport</a>
+    <a href="#zahrada" data-nav-area="zahrada">Zahrada</a>
+    <a href="#skola" data-nav-area="skola">Škola</a>
+    <a href="#vcelareni" data-nav-area="vcelareni">Včelaření</a>
   </nav>
 </header>
 
@@ -97,6 +97,19 @@ vcelareni:["Včelaření","vcelareni.jpg","Roj včel u úlu","Včely jsou úžas
 };
 const m=document.getElementById("photoModal"),im=document.getElementById("modalImage"),ti=document.getElementById("modalTitle"),de=document.getElementById("modalDescription");
 document.querySelectorAll(".area-card").forEach(c=>c.addEventListener("click",()=>{let d=data[c.dataset.area];ti.textContent=d[0];im.src=d[1];im.alt=d[2];de.textContent=d[3];m.classList.add("open");m.setAttribute("aria-hidden","false");document.body.classList.add("modal-open")}));
+document.querySelectorAll("[data-nav-area]").forEach(link=>{
+  link.addEventListener("click",e=>{
+    e.preventDefault();
+    const d=data[link.dataset.navArea];
+    ti.textContent=d[0];
+    im.src=d[1];
+    im.alt=d[2];
+    de.textContent=d[3];
+    m.classList.add("open");
+    m.setAttribute("aria-hidden","false");
+    document.body.classList.add("modal-open");
+  });
+});
 function closeM(){m.classList.remove("open");m.setAttribute("aria-hidden","true");im.src="";document.body.classList.remove("modal-open")}
 document.querySelector(".close-modal").addEventListener("click",closeM);
 m.addEventListener("click",e=>{if(e.target===m)closeM()});
