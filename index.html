@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Žijte naplno – Mirek Zahrádka</title>
-<meta name="description" content="Žijte naplno – osobní stránky Mirka Zahrádky. Hudba, sport, zahrada, škola a včelaření.">
+<meta name="description" content="Žijte naplno – osobní stránky Mirka Zahrádky: hudba, sport, zahrada, škola a včelaření.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="brand"><span>Žijte naplno</span><small>Mirek Zahrádka</small></div>
+<header class="top">
+  <div class="logo">
+    <div class="logo-title">Žijte naplno</div>
+    <div class="logo-name">MIREK ZAHRÁDKA</div>
+  </div>
   <nav>
-    <a href="#hudba">Hudba</a>
-    <a href="#sport">Sport</a>
-    <a href="#zahrada">Zahrada</a>
-    <a href="#skola">Škola</a>
-    <a href="#vcelareni">Včelaření</a>
+    <a href="#uvod">ÚVOD</a><a href="#hudba">HUDBA</a><a href="#sport">SPORT</a>
+    <a href="#zahrada">ZAHRADA</a><a href="#skola">ŠKOLA</a><a href="#vcelareni">VČELAŘENÍ</a>
   </nav>
 </header>
 
 <main>
-<section class="hero">
+<section id="uvod" class="hero">
+  <div class="hero-art"><img src="houslovy-klic.png" alt="Okřídlený houslový klíč s klávesami"></div>
   <div class="hero-text">
-    <p class="eyebrow">OSOBNÍ WEB</p>
-    <h1>Žijte naplno</h1>
-    <p>Hudba, pohyb, příroda, škola a radost z toho, co má smysl.</p>
-    <a class="button" href="#oblasti">Prozkoumat stránky</a>
+    <div class="eyebrow">VÍTEJTE</div>
+    <h1>Žijte naplno každý den</h1>
+    <p>Hudba, sport, zahrada, škola i včelaření – to jsou moje vášně, které mě naplňují a přinášejí radost.</p>
+    <p>Vítejte na mém místě, kde se dělím o to, co mám rád.</p>
   </div>
-  <div class="art">
-    <img src="hudba.png" alt="Hudební motiv s okřídleným klíčem">
-    <img src="srdce.png" alt="Srdce s kytarou a trubkami">
-  </div>
+  <div class="hero-photo"></div>
 </section>
 
-<section id="oblasti" class="areas">
-  <article id="hudba"><div class="icon">♫</div><h2>Hudba</h2><p>Kytara, banjo, zpěv a radost z muzicírování.</p></article>
-  <article id="sport"><div class="icon">⌁</div><h2>Sport</h2><p>Wingfoiling, vítr, voda a dobrodružství.</p></article>
-  <article id="zahrada"><div class="icon">✿</div><h2>Zahrada</h2><p>Rostliny, ovoce, zelenina a život v zahradě.</p></article>
-  <article id="skola"><div class="icon">π</div><h2>Škola</h2><p>Výuka matematiky a fyziky srozumitelně a prakticky.</p></article>
-  <article id="vcelareni"><div class="icon">♛</div><h2>Včelaření</h2><p>Včely, úly, med a zkušenosti ze včelařské praxe.</p></article>
+<section class="cards">
+  <article id="sport" class="card"><img src="sport.jpg" alt="Dva wingfoily na vodě"><div class="card-body"><h2>SPORT</h2><p>Wingfoil je moje vášeň. Vítr, voda, pohyb a svoboda – a radost z každého okamžiku na vodě.</p></div></article>
+  <article id="hudba" class="card"><img src="hudba.jpg" alt="Hudba u táboráku"><div class="card-body"><h2>HUDBA</h2><p>Kytara, banjo a zpěv. Hudba provází můj život a u táboráku vznikají chvíle, na které se nezapomíná.</p></div></article>
+  <article id="zahrada" class="card"><img src="zahrada.jpg" alt="Dům a zahrada"><div class="card-body"><h2>ZAHRADA</h2><p>Zahrada je místo klidu, práce i tvoření. Stromy, květiny, zelenina a radost z každého ročního období.</p></div></article>
+  <article id="skola" class="card"><img src="skola.jpg" alt="Děti na skalním útvaru"><div class="card-body"><h2>ŠKOLA</h2><p>Výuka matematiky a fyziky, práce s dětmi a společné objevování světa.</p></div></article>
+  <article id="vcelareni" class="card"><img src="vcelareni.jpg" alt="Včelaření a roj včel"><div class="card-body"><h2>VČELAŘENÍ</h2><p>Včely jsou úžasné tvory. Včelaření mě učí trpělivosti, pokoře a úctě k přírodě.</p></div></article>
 </section>
 
-<section class="about">
-  <h2>Život je příliš zajímavý na to, abychom ho jen pozorovali.</h2>
-  <p>Tyto stránky jsou místem pro zájmy, zkušenosti, nápady a věci, které mě baví.</p>
-</section>
+<section class="quote"><p>„Dělej, co tě baví. Buď s lidmi, které máš rád. A buď vděčný za každý den.“</p><strong>Mirek Zahrádka</strong></section>
 </main>
-
 <footer>© Mirek Zahrádka · Žijte naplno</footer>
 </body>
 </html>
