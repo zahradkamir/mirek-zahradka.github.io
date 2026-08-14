@@ -49,29 +49,29 @@
 </section>
 
 <section class="cards">
-  <article id="hudba" class="card">
+  <article id="hudba" class="card area-card" data-area="hudba">
     <img src="hudba.jpg" alt="Hudba u táboráku">
-    <div class="card-content"><h2>Hudba</h2><p>Kytara, banjo a zpěv. Hudba provází můj život a u táboráku vznikají chvíle, na které se nezapomíná.</p></div>
+    <div class="card-content"><h2>Hudba</h2><p>Kytara, banjo a zpěv. Hudba provází můj život a u táboráku vznikají chvíle, na které se nezapomíná.</p><span class="more">Zobrazit fotografii v plné velikosti</span></div>
   </article>
 
-  <article id="sport" class="card">
+  <article id="sport" class="card area-card" data-area="sport">
     <img src="sport.jpg" alt="Dva wingfoily na vodě">
-    <div class="card-content"><h2>Sport</h2><p>Wingfoiling, vítr, voda a svoboda. Pohyb, který přináší energii a radost z každého okamžiku na vodě.</p></div>
+    <div class="card-content"><h2>Sport</h2><p>Wingfoiling, vítr, voda a svoboda. Pohyb, který přináší energii a radost z každého okamžiku na vodě.</p><span class="more">Zobrazit fotografii v plné velikosti</span></div>
   </article>
 
-  <article id="zahrada" class="card">
+  <article id="zahrada" class="card area-card" data-area="zahrada">
     <img src="zahrada.jpg" alt="Dům a zahrada">
-    <div class="card-content"><h2>Zahrada</h2><p>Místo klidu, práce i tvoření. Stromy, květiny, zelenina a radost z každého ročního období.</p></div>
+    <div class="card-content"><h2>Zahrada</h2><p>Místo klidu, práce i tvoření. Stromy, květiny, zelenina a radost z každého ročního období.</p><span class="more">Zobrazit fotografii v plné velikosti</span></div>
   </article>
 
-  <article id="skola" class="card">
+  <article id="skola" class="card area-card" data-area="skola">
     <img src="skola.jpg" alt="Děti na skalním útvaru">
-    <div class="card-content"><h2>Škola</h2><p>Výuka matematiky a fyziky a společné objevování světa s dětmi.</p></div>
+    <div class="card-content"><h2>Škola</h2><p>Výuka matematiky a fyziky a společné objevování světa s dětmi.</p><span class="more">Zobrazit fotografii v plné velikosti</span></div>
   </article>
 
-  <article id="vcelareni" class="card">
+  <article id="vcelareni" class="card area-card" data-area="vcelareni">
     <img src="vcelareni.jpg" alt="Roj včel u úlu">
-    <div class="card-content"><h2>Včelaření</h2><p>Včely jsou úžasné bytosti. Včelaření mě učí trpělivosti, pokoře a úctě k přírodě.</p></div>
+    <div class="card-content"><h2>Včelaření</h2><p>Včely jsou úžasné bytosti. Včelaření mě učí trpělivosti, pokoře a úctě k přírodě.</p><span class="more">Zobrazit fotografii v plné velikosti</span></div>
   </article>
 </section>
 
@@ -79,8 +79,27 @@
   <p>„Dělej, co tě baví. Buď s lidmi, které máš rád. A buď vděčný za každý den.“</p>
   <strong>Mirek Zahrádka</strong>
 </section>
-</main>
+<div id="photoModal" class="photo-modal" aria-hidden="true">
+<div class="photo-window" role="dialog" aria-modal="true">
+<button class="close-modal" aria-label="Zavřít">×</button>
+<div class="modal-photo-wrap"><img id="modalImage" src="" alt=""></div>
+<div class="modal-text"><h2 id="modalTitle"></h2><p id="modalDescription"></p></div>
+</div></div></main>
 
 <footer>© Mirek Zahrádka · Žijte naplno</footer>
-</body>
+<script>
+const data={
+hudba:["Hudba","hudba.jpg","Hudba u táboráku","Kytara, banjo a zpěv. Hudba provází můj život a u táboráku vznikají chvíle, na které se nezapomíná."],
+sport:["Sport","sport.jpg","Dva wingfoily na vodě","Wingfoiling, vítr, voda a svoboda. Pohyb, který přináší energii a radost z každého okamžiku na vodě."],
+zahrada:["Zahrada","zahrada.jpg","Dům a zahrada","Místo klidu, práce i tvoření. Stromy, květiny, zelenina a radost z každého ročního období."],
+skola:["Škola","skola.jpg","Děti na skalním útvaru","Výuka matematiky a fyziky a společné objevování světa s dětmi."],
+vcelareni:["Včelaření","vcelareni.jpg","Roj včel u úlu","Včely jsou úžasné bytosti. Včelaření mě učí trpělivosti, pokoře a úctě k přírodě."]
+};
+const m=document.getElementById("photoModal"),im=document.getElementById("modalImage"),ti=document.getElementById("modalTitle"),de=document.getElementById("modalDescription");
+document.querySelectorAll(".area-card").forEach(c=>c.addEventListener("click",()=>{let d=data[c.dataset.area];ti.textContent=d[0];im.src=d[1];im.alt=d[2];de.textContent=d[3];m.classList.add("open");m.setAttribute("aria-hidden","false");document.body.classList.add("modal-open")}));
+function closeM(){m.classList.remove("open");m.setAttribute("aria-hidden","true");im.src="";document.body.classList.remove("modal-open")}
+document.querySelector(".close-modal").addEventListener("click",closeM);
+m.addEventListener("click",e=>{if(e.target===m)closeM()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&m.classList.contains("open"))closeM()});
+</script></body>
 </html>
